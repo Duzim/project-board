@@ -9,15 +9,33 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
   "main": "./dist/extension.js",
+  "activationEvents": ["onStartupFinished"],
   "contributes": {
     "commands": [
       {
-        "command": "myProjectDashboard.open",
+        "command": "myProjectDashboard.focus",
         "title": "Open Project Dashboard"
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "myProjectDashboard",
+          "title": "My Project Dashboard",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "myProjectDashboard": [
+        {
+          "id": "myProjectDashboard.view",
+          "name": "Projetos",
+          "type": "webview"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
