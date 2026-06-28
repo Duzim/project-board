@@ -1,5 +1,100 @@
+:root {
+    --radius: 8px;
+    --gap: 12px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background: #1e1e2e;
-    color: #89b4fa;
-    font-family: sans-serif;
+    margin: 0;
+    padding: 16px 20px 32px;
+    font-family: var(--vscode-font-family);
+    font-size: var(--vscode-font-size);
+    color: var(--vscode-foreground);
+    background: var(--vscode-editor-background);
+}
+
+/* ---- Grupo ---- */
+.group {
+    margin-bottom: 28px;
+}
+
+.group-title {
+    margin: 0 0 12px 2px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--vscode-descriptionForeground);
+}
+
+/* ---- Grade de cards ---- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--gap);
+}
+
+/* ---- Card ---- */
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 16px 14px 18px;
+    border-radius: var(--radius);
+    background: var(--vscode-editorWidget-background, var(--vscode-sideBar-background));
+    border: 1px solid var(--vscode-widget-border, transparent);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.08s ease, border-color 0.08s ease;
+}
+
+.card:hover {
+    border-color: var(--vscode-focusBorder);
+    transform: translateY(-1px);
+}
+
+/* a faixa de cor por projeto — o elemento "assinatura" */
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--accent, var(--vscode-foreground));
+}
+
+.card-name {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.card-path {
+    font-size: 0.75rem;
+    color: var(--vscode-descriptionForeground);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: rtl;
+    /* corta o caminho pela esquerda, mostrando o fim */
+    text-align: left;
+}
+
+/* ---- Estado vazio ---- */
+.empty {
+    margin-top: 60px;
+    text-align: center;
+    color: var(--vscode-descriptionForeground);
+}
+
+/* respeita quem prefere menos animação */
+@media (prefers-reduced-motion: reduce) {
+    .card {
+        transition: none;
+    }
 }
