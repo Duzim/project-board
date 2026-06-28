@@ -98,3 +98,60 @@ body {
         transition: none;
     }
 }
+
+/* ---- Header ---- */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* ---- Botão ---- */
+button {
+    font-family: inherit;
+    font-size: 0.85rem;
+    padding: 7px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--vscode-button-foreground);
+    background: var(--vscode-button-background);
+}
+
+button:hover {
+    background: var(--vscode-button-hoverBackground);
+}
+
+button:active {
+    /* leve "afundada" no clique — dá sensação de resposta física */
+    transform: translateY(1px);
+}
+
+button:focus-visible {
+    outline: 1px solid var(--vscode-focusBorder);
+    outline-offset: 2px;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* botão secundário, pra ações menos primárias como "adicionar grupo" */
+.secondary {
+    background: var(--vscode-button-secondaryBackground);
+    color: var(--vscode-button-secondaryForeground);
+}
+
+.secondary:hover {
+    background: var(--vscode-button-secondaryHoverBackground);
+}

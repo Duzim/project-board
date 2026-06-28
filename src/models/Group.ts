@@ -9,7 +9,7 @@ export interface Group {
 
 export function createGroup(input: {
     name: string,
-    projects: Project[]
+    projects?: Project[]
 }): Group {
     return {
         id: randomUUID(),
