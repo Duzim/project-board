@@ -19,3 +19,8 @@ export function escapeHtml(text: string): string {
 export function getNonce(): string {
   return crypto.randomBytes(32).toString('base64');
 }
+
+export function getRandomHexColor(): string {
+  const randomInt = Math.floor(Math.random() * 0xffffff);
+  return `#${randomInt.toString(16).padStart(6, '0')}`;
+}

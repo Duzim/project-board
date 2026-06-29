@@ -4,7 +4,7 @@ import { createGroup } from './Group';
 import { createProject, Project, withColor } from './Project';
 import GroupsStore from '../services/GroupsStore';
 import { InboundMessage } from '../types';
-import { getNonce, isRgbOrHex } from '../utils';
+import { getNonce, getRandomHexColor, isRgbOrHex } from '../utils';
 import path from 'path';
 
 export class View {
@@ -212,11 +212,34 @@ export class View {
   }
 
   private async promptColor(current?: string): Promise<string | undefined> {
+    const PRESETS = [
+      { label: '🔵 Azul',    color: '#89b4fa' },
+      { label: '🟢 Verde',   color: '#a6e3a1' },
+      { label: '🟡 Amarelo', color: '#f9e2af' },
+      { label: '🔴 Vermelho', color: '#f38ba8' },
+      { label: '🟣 Roxo',    color: '#cba6f7' },
+      { label: '🟠 Laranja', color: '#fab387' },
+    ];
+
+    const CUSTOM = 'Digitar cor personalizada…';
+
+    const pick = await vscode.window.showQuickPick(
+      [
+        ...PRESETS.map(p => ({ label: p.label, description: p.color, color: p.color })),
+        { label: '🎨 random color', description:'rand color', color: getRandomHexColor()},
+        { label: CUSTOM, description: 'hex or rgb', color: undefined },
+      ],
+      { placeHolder: 'Choose a color or enter your own' },
+    );
+
+    if (!pick) return undefined;
+    if (pick.color) return pick.color;
+
     return vscode.window.showInputBox({
-      prompt: 'Color of Project (hex or rgb)',
-      value: current,
-      placeHolder: '#89b4fa',
-      validateInput: (v) => !v || isRgbOrHex(v) ? undefined : 'Use hex (#rrggbb) ou rgb(...)',
+        prompt: 'Project color (hex or rgb)',
+        value: current,
+        placeHolder: '#89b4fa',
+        validateInput: (v) => !v || isRgbOrHex(v) ? undefined : 'Use hex (#rrggbb) or rgb(...)',
     });
   }
 
