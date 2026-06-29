@@ -49,4 +49,11 @@ export default class GroupsStore {
         );
         await this.saveGroups(groups);
     }
+
+    async renameGroup(groupId: string, name: string): Promise<void> {
+        const groups = this.getGroups().map(g =>
+            g.id === groupId ? { ...g, name } : g
+        );
+        await this.saveGroups(groups);
+    }
 }

@@ -5,7 +5,9 @@ export type InboundMessage =
   | { type: 'editColor'; projectId: string; groupId: string }
   | { type: 'editInfo'; projectId: string; groupId: string }
   | { type: 'removeProject'; groupId: string; projectId: string }
-  | { type: 'ready' };
+  | { type: 'ready' }
+  | { type: 'editGroup'; groupId: string }
+  | { type: 'removeGroup'; groupId: string };
 
 export type OutboundMessage =
   | { type: 'projects'; html: string };

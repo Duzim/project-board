@@ -16,7 +16,7 @@ body {
     background: var(--vscode-editor-background);
 }
 
-/* ---- Grupo ---- */
+/* ---- Group ---- */
 .group {
     margin-bottom: 28px;
 }
@@ -28,6 +28,34 @@ body {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--vscode-descriptionForeground);
+}
+
+.group-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.group-actions {
+    display: flex;
+    gap: 6px;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+}
+
+.group-header:hover .group-actions {
+    opacity: 1;
+}
+
+.group-actions button {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: var(--vscode-button-secondaryBackground);
+    color: var(--vscode-button-secondaryForeground);
 }
 
 /* ---- Grade de cards ---- */
@@ -57,7 +85,6 @@ body {
     transform: translateY(-1px);
 }
 
-/* a faixa de cor por projeto — o elemento "assinatura" */
 .card::before {
     content: "";
     position: absolute;
@@ -81,7 +108,6 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     direction: rtl;
-    /* corta o caminho pela esquerda, mostrando o fim */
     text-align: left;
 }
 

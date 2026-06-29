@@ -5,6 +5,8 @@ const ACTION_TO_TYPE = {
   'remove-project': 'removeProject',
   'add-group': 'addGroup',
   'add-project': 'addProject',
+  'edit-group': 'editGroup',
+  'remove-group': 'removeGroup',
 }
 
 document.addEventListener('click', (event) => {

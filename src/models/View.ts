@@ -90,7 +90,7 @@ export class View {
         }
         break;
       }
-      case 'removeProject':
+      case 'removeProject': {
         const confirm = await vscode.window.showWarningMessage(
           'Remove this project from the dashboard?',
           { modal: true },
@@ -100,10 +100,12 @@ export class View {
         await this.store.removeProject(msg.groupId, msg.projectId);
         await this.render();
         break;
-      case 'addProject':
+      }
+      case 'addProject': {
         await this.promptAddProject();
         break;
-      case 'editColor':
+      }
+      case 'editColor': {
         const project = this.findProject(msg.projectId);
         if (!project) break;
 
@@ -113,23 +115,49 @@ export class View {
         await this.store.updateProject(msg.groupId, withColor(project, color));
         await this.render();
         break;
-      case 'editInfo':
-        const project1 = this.findProject(msg.projectId);  
-        if (!project1) break;
+      }
+      case 'editInfo': {
+        const project = this.findProject(msg.projectId);  
+        if (!project) break;
         
-        const name = await this.promptName(project1.name);
+        const name = await this.promptName(project.name);
         if (!name) break;
 
-        const path = await this.promptPath(project1.path);
+        const path = await this.promptPath(project.path);
         if (!path) break;
 
-        await this.store.updateProject(msg.groupId, {...project1, name: name.trim(), path});
+        await this.store.updateProject(msg.groupId, {...project, name: name.trim(), path});
         await this.render();
         break;
-      case 'addGroup':
+      }
+      case 'addGroup': {
         await this.promptAddGroup();
         await this.render();
         break;
+      }
+      case 'removeGroup': {
+        const group = this.store.getGroups().find(g => g.id === msg.groupId);
+        if (!group) break;
+
+        if (group.projects.length > 0) {
+          vscode.window.showWarningMessage("This group has projects. Remove the projects before deleting the group.");
+          break;
+        }
+        await this.store.removeGroup(msg.groupId);
+        await this.render();
+        break;
+      }
+      case 'editGroup': {
+        const group = this.store.getGroups().find(g => g.id === msg.groupId);
+        if (!group) break;
+
+        const name = await this.promptName(group.name);
+        if (!name) break;
+
+        await this.store.renameGroup(msg.groupId, name.trim());
+        await this.render();
+        break;
+      }
       case 'ready':
         break;
     }
@@ -184,13 +212,13 @@ export class View {
   }
 
   private async promptColor(current?: string): Promise<string | undefined> {
-  return vscode.window.showInputBox({
-    prompt: 'Color of Project (hex or rgb)',
-    value: current,
-    placeHolder: '#89b4fa',
-    validateInput: (v) => !v || isRgbOrHex(v) ? undefined : 'Use hex (#rrggbb) ou rgb(...)',
-  });
-}
+    return vscode.window.showInputBox({
+      prompt: 'Color of Project (hex or rgb)',
+      value: current,
+      placeHolder: '#89b4fa',
+      validateInput: (v) => !v || isRgbOrHex(v) ? undefined : 'Use hex (#rrggbb) ou rgb(...)',
+    });
+  }
 
   private async promptName(name = ""): Promise<string | undefined> {
     return await vscode.window.showInputBox({
