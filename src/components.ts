@@ -2,15 +2,31 @@ import { Group } from "./models/Group";
 import { Project } from "./models/Project";
 import { escapeHtml } from "./utils";
 
-export function renderCard(project: Project, groupId: string):string {
-    const color = project.color ?? 'var(--vscode-foreground)';
-    return `
-        <div class="card" data-id="${escapeHtml(project.id)}" data-group-id="${escapeHtml(groupId)}" style="--accent: ${project.color ?? 'var(--vscode-foreground)'}">
-            <h3 class="card-name">${escapeHtml(project.name)}</h3>
-            <span class="card-path">${escapeHtml(project.path)}</span>
-        </div>
-    `;
+// export function renderCard(project: Project, groupId: string):string {
+//     const color = project.color ?? 'var(--vscode-foreground)';
+//     return `
+//         <div class="card" data-id="${escapeHtml(project.id)}" data-group-id="${escapeHtml(groupId)}" style="--accent: ${project.color ?? 'var(--vscode-foreground)'}">
+//             <h3 class="card-name">${escapeHtml(project.name)}</h3>
+//             <span class="card-path">${escapeHtml(project.path)}</span>
+//         </div>
+//     `;
+// }
+export function renderCard(project: Project, groupId: string): string {
+  const gid = escapeHtml(groupId);
+  const pid = escapeHtml(project.id);
+  return `
+    <div class="card" data-id="${pid}" data-group-id="${gid}" style="--accent: ${project.color ?? 'var(--vscode-foreground)'}">
+      <h3 class="card-name">${escapeHtml(project.name)}</h3>
+      <span class="card-path">${escapeHtml(project.path)}</span>
+      <div class="card-actions">
+        <button data-action="edit-color" data-id="${pid}" data-group-id="${gid}">Color</button>
+        <button data-action="edit-project" data-id="${pid}" data-group-id="${gid}">Edit</button>
+        <button data-action="remove-project" data-id="${pid}" data-group-id="${gid}" class="danger">Remove</button>
+      </div>
+    </div>
+  `;
 }
+
 
 export function renderGroup(group: Group) {
     const cards = group.projects.map(p => renderCard(p, group.id)).join('');

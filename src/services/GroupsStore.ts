@@ -40,4 +40,13 @@ export default class GroupsStore {
         } : g);
         await this.saveGroups(groups);
     }
+
+    async updateProject(groupId: string, project: Project): Promise<void> {
+        const groups = this.getGroups().map(g => 
+            g.id === groupId
+            ? { ...g, projects: g.projects.map(p => p.id === project.id ? project : p ) }
+            : g
+        );
+        await this.saveGroups(groups);
+    }
 }

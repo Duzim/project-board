@@ -15,7 +15,7 @@ export function createProject(input: {
     color?: string;            
     imageBackground?: string; 
 }) {
-    return {
+  return {
     id: crypto.randomUUID(),
     name: input.name,
     path: input.path,
@@ -25,5 +25,5 @@ export function createProject(input: {
 }
 
 export function withColor(project: Project, color: string): Project {
-    return { ...project, color };
+  return { ...project, color };
 }
