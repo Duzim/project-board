@@ -3,6 +3,11 @@
   "displayName": "My Project Dashboard",
   "description": "A project designed to organize your projects with an intuitive dashboard.",
   "version": "0.0.1",
+  "publisher": "Duzim",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Duzim/my-project-dashboard.git"
+  },
   "engines": {
     "vscode": "^1.124.0"
   },
