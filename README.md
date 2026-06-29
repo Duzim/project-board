@@ -1,71 +1,118 @@
-# my-project-dashboard README
+# My Project Dashboard
 
-This is the README for your extension "my-project-dashboard". After writing up a brief description, we recommend including the following sections.
+> **Language / Idioma:** [English](#english) · [Português](#português)
 
-## Features
+A visual dashboard to organize, group, and quickly open your projects in VS Code — like a home page for your repositories.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
-For example if there is an image subfolder under your extension project workspace:
+| Dark | Light |
+|---|---|
+| <img src="./media/dashboard_dark.png" alt="dashboard image" width="400"/> | <img src="./media/dashboard_light.png" alt="dashboard image" width="400"/> | 
 
-\!\[feature X\]\(images/feature-x.png\)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+<!--
+  ⚠️ ANTES DE PUBLICAR, substitua:
+  - SEU-PUBLISHER  → o id do seu publisher no Marketplace
+  - SEU-USUARIO    → seu usuário do GitHub
+  - images/...     → coloque seus screenshots/GIF na pasta images/ do repositório
+  Caminhos de imagem precisam ser RELATIVOS ao repositório (o Marketplace
+  resolve a partir do seu repo), ou use URLs absolutas (https://...).
+-->
 
 ---
 
-## Following extension guidelines
+## English
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+### Features
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+- 📋 **Visual dashboard** of all your projects, opened right in the editor.
+- 🗂️ **Groups** — organize projects by category (Work, Personal, Studies…).
+- 🎨 **Custom colors** — pick from a palette or type your own hex/rgb.
+- 🖼️ **Background image / color** per project card.
+- ⚡ **One-click open** — open any project in a new window.
+- 🧭 **Activity bar icon** — a launcher in the sidebar opens the dashboard.
+- ✏️ **Full management** — add, edit, and remove projects and groups.
+- 💾 **Persistent** — your projects are remembered across sessions.
 
-## Working with Markdown
+### Getting started
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+1. Click the **My Project Dashboard** icon in the activity bar (left vertical strip).
+2. Click **Open Dashboard**.
+3. Use **+ Group** to create a group, then **+ Project** to add a folder.
+4. Click a card to open that project.
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+### Usage
 
-## For more information
+| Action | How |
+|---|---|
+| Open the dashboard | Activity bar icon → *Open Dashboard*, or run **Open Project Dashboard** from the Command Palette (`Ctrl+Shift+P`) |
+| Add a project | **+ Project** → choose a folder → name it → pick a group |
+| Add a group | **+ Group** → type a name |
+| Edit a project's color | **Color** button on the card |
+| Edit a project's name/path | **Edit** button on the card |
+| Remove a project | **Delete** button on the card |
+| Rename a group | **Rename** button on the group header |
+| Delete a group | **Delete** on the group header (empty groups only) |
+| Open a project | Click the card |
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+### Requirements
 
-**Enjoy!**
+- VS Code `^1.124.0` or newer.
+
+### Release notes
+
+See the [Changelog](CHANGELOG.md).
+
+### License
+
+[MIT](LICENSE)
+
+---
+
+## Português
+
+Um painel visual para organizar, agrupar e abrir rapidamente seus projetos no VS Code — como uma página inicial dos seus repositórios.
+
+### Recursos
+
+- 📋 **Painel visual** com todos os seus projetos, aberto na área do editor.
+- 🗂️ **Grupos** — organize por categoria (Trabalho, Pessoal, Estudos…).
+- 🎨 **Cores personalizadas** — escolha de uma paleta ou digite seu hex/rgb.
+- 🖼️ **Imagem ou cor de fundo** por card de projeto.
+- ⚡ **Abrir com um clique** — abra qualquer projeto em uma nova janela.
+- 🧭 **Ícone na barra de atividades** — um lançador na lateral abre o painel.
+- ✏️ **Gerenciamento completo** — adicione, edite e remova projetos e grupos.
+- 💾 **Persistente** — seus projetos são lembrados entre sessões.
+
+### Primeiros passos
+
+1. Clique no ícone **My Project Dashboard** na barra de atividades (faixa vertical à esquerda).
+2. Clique em **Abrir Dashboard**.
+3. Use **+ Grupo** para criar um grupo e **+ Projeto** para adicionar uma pasta.
+4. Clique em um card para abrir o projeto.
+
+### Como usar
+
+| Ação | Como |
+|---|---|
+| Abrir o painel | Ícone na barra de atividades → *Abrir Dashboard*, ou rode **Open Project Dashboard** na paleta de comandos (`Ctrl+Shift+P`) |
+| Adicionar projeto | **+ Projeto** → escolha a pasta → nomeie → escolha o grupo |
+| Adicionar grupo | **+ Grupo** → digite um nome |
+| Editar a cor de um projeto | Botão **Cor** no card |
+| Editar nome/caminho | Botão **Editar** no card |
+| Remover um projeto | Botão **Excluir** no card |
+| Renomear um grupo | Botão **Renomear** no cabeçalho do grupo |
+| Excluir um grupo | **Excluir** no cabeçalho do grupo (apenas grupos vazios) |
+| Abrir um projeto | Clique no card |
+
+### Requisitos
+
+- VS Code `^1.124.0` ou mais recente.
+
+### Notas de versão
+
+Veja o [Changelog](CHANGELOG.md).
+
+### Licença
+
+[MIT](LICENSE)
