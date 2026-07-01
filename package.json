@@ -1,13 +1,13 @@
 {
-  "name": "my-project-dashboard",
-  "displayName": "My Project Dashboard",
+  "name": "project-board",
+  "displayName": "Project Board",
   "description": "A project designed to organize your projects with an intuitive dashboard.",
   "version": "1.0.0",
   "publisher": "Duzim",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Duzim/my-project-dashboard.git"
+    "url": "https://github.com/Duzim/project-board.git"
   },
   "engines": {
     "vscode": "^1.124.0"
@@ -20,25 +20,26 @@
   "contributes": {
     "commands": [
       {
-        "command": "myProjectDashboard.focus",
+        "command": "projectBoard.focus",
         "title": "Open Project Dashboard"
       }
     ],
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "myProjectDashboard",
-          "title": "My Project Dashboard",
+          "id": "projectBoard",
+          "title": "Project Board",
           "icon": "media/icon.svg"
         }
       ]
     },
     "views": {
-      "myProjectDashboard": [
+      "projectBoard": [
         {
-          "id": "myProjectDashboard.view",
+          "id": "projectBoard.view",
           "name": "Projetos",
-          "type": "webview"
+          "type": "webview",
+          "icon": "media/icon.svg"
         }
       ]
     }

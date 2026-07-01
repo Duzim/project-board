@@ -1,6 +1,3 @@
-import * as vscode from 'vscode';
-import { isRgbOrHex } from '../utils';
-
 export interface Project {
   id: string;
   name: string;

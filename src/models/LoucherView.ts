@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import { getNonce } from '../utils';
 
 export class LauncherView implements vscode.WebviewViewProvider {
-  public static readonly viewType = 'myProjectDashboard.view';
+  public static readonly viewType = 'projectBoard.view';
 
   constructor(private context: vscode.ExtensionContext) {}
 
@@ -39,7 +39,7 @@ export class LauncherView implements vscode.WebviewViewProvider {
 
     webviewView.webview.onDidReceiveMessage((msg) => {
       if (msg.type === 'open') {
-        vscode.commands.executeCommand('myProjectDashboard.open');
+        vscode.commands.executeCommand('projectBoard.open');
       }
     });
   }

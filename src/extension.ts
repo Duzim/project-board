@@ -8,7 +8,7 @@ export function activate(context: vscode.ExtensionContext) {
 	const store = new GroupsStore(context);
 
 	context.subscriptions.push(
-		vscode.commands.registerCommand('myProjectDashboard.open', () => {
+		vscode.commands.registerCommand('projectBoard.open', () => {
 			View.createOrShow(context, store);
 		}),
 	);
@@ -25,7 +25,7 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.workspace.workspaceFolders.length === 0;
 
 	if (withoutProject) {
-		vscode.commands.executeCommand('myProjectDashboard.view.focus');
+		vscode.commands.executeCommand('projectBoard.view.focus');
 	}
 }
 

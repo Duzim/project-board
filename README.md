@@ -1,4 +1,4 @@
-# My Project Dashboard
+# Project Board
 
 > **Language / Idioma:** [English](#english) · [Português](#português)
 
@@ -36,7 +36,7 @@ A visual dashboard to organize, group, and quickly open your projects in VS Code
 
 ### Getting started
 
-1. Click the **My Project Dashboard** icon in the activity bar (left vertical strip).
+1. Click the **Project Board** icon in the activity bar (left vertical strip).
 2. Click **Open Dashboard**.
 3. Use **+ Group** to create a group, then **+ Project** to add a folder.
 4. Click a card to open that project.

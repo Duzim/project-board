@@ -17,8 +17,8 @@ export class View {
     private store: GroupsStore,
   ) {
     this.panel = vscode.window.createWebviewPanel(
-      'myProjectDashboard',
-      'My Project Dashboard',
+      'projectBoard',
+      'Project Board',
       vscode.ViewColumn.One,
       {
         enableScripts: true,

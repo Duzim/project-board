@@ -3,7 +3,7 @@ import { Group } from '../models/Group';
 import { Project } from '../models/Project';
 
 export default class GroupsStore {
-    private static readonly KEY = 'myProjectDashboard.groups';
+    private static readonly KEY = 'projectBoard.groups';
 
     constructor(
         private context: vscode.ExtensionContext
