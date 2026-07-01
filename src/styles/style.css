@@ -1,6 +1,7 @@
 :root {
     --radius: 8px;
     --gap: 12px;
+    --accent-default: #ff4d29;
 }
 
 * {
@@ -72,9 +73,9 @@ body {
     flex-direction: column;
     gap: 4px;
     padding: 14px 16px 14px 18px;
+    border: 1px solid var(--vscode-widget-border, #333333);
     border-radius: var(--radius);
     background: var(--vscode-editorWidget-background, var(--vscode-sideBar-background));
-    border: 1px solid var(--vscode-widget-border, transparent);
     cursor: pointer;
     overflow: hidden;
     transition: transform 0.08s ease, border-color 0.08s ease;

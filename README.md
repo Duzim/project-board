@@ -1,3 +1,7 @@
+<div align="center">
+    <img src="./media/image.png" alt="Butterfly" height="200"/>
+</div>
+
 # Project Board
 
 > **Language / Idioma:** [English](#english) · [Português](#português)
@@ -86,7 +90,7 @@ Um painel visual para organizar, agrupar e abrir rapidamente seus projetos no VS
 
 ### Primeiros passos
 
-1. Clique no ícone **My Project Dashboard** na barra de atividades (faixa vertical à esquerda).
+1. Clique no ícone **Project Board** na barra de atividades (faixa vertical à esquerda).
 2. Clique em **Abrir Dashboard**.
 3. Use **+ Grupo** para criar um grupo e **+ Projeto** para adicionar uma pasta.
 4. Clique em um card para abrir o projeto.

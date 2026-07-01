@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "publisher": "Duzim",
   "license": "MIT",
+  "icon": "media/image.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/Duzim/project-board.git"
