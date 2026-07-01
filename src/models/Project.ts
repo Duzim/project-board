@@ -1,3 +1,5 @@
+import crypto from 'node:crypto';
+
 export interface Project {
   id: string;
   name: string;

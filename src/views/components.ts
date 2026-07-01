@@ -1,6 +1,6 @@
-import { Group } from "./models/Group";
-import { Project } from "./models/Project";
-import { escapeHtml } from "./utils";
+import { Group } from "../models/Group";
+import { Project } from "../models/Project";
+import { escapeHtml } from "../utils";
 
 export function renderCard(project: Project, groupId: string): string {
   const gid = escapeHtml(groupId);

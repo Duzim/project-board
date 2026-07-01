@@ -1,17 +1,18 @@
 import * as vscode from 'vscode';
-import { renderDashboard } from '../components';
-import { createGroup } from './Group';
-import { createProject, Project, withColor } from './Project';
+import { renderDashboard } from './components';
+import { createGroup } from '../models/Group';
+import { createProject, Project, withColor } from '../models/Project';
 import GroupsStore from '../services/GroupsStore';
-import { InboundMessage } from '../types';
+import { InboundMessage } from '../shared/messages';
 import { getNonce, getRandomHexColor, isRgbOrHex } from '../utils';
 import path from 'path';
 
-export class View {
-  private static current: View | undefined;
+export class DashBoardPanel {
+  private static current: DashBoardPanel | undefined;
   private panel: vscode.WebviewPanel;
   private disposables: vscode.Disposable[] = [];
 
+  
   private constructor(
     private context: vscode.ExtensionContext,
     private store: GroupsStore,
@@ -28,7 +29,7 @@ export class View {
         ],
       },
     );
-
+  
     this.panel.webview.onDidReceiveMessage(
       (msg: InboundMessage) => this.handleMessage(msg),
       null,
@@ -36,7 +37,7 @@ export class View {
     );
 
     this.panel.onDidDispose(() => {
-      View.current = undefined;
+      DashBoardPanel.current = undefined;
       this.disposables.forEach(d => d.dispose());
       this.disposables = [];
     });
@@ -44,12 +45,12 @@ export class View {
 
   static async createOrShow(context: vscode.ExtensionContext, store: GroupsStore): Promise<void> {
     try {
-      if (View.current) {
-        View.current.panel.reveal();
+      if (DashBoardPanel.current) {
+        DashBoardPanel.current.panel.reveal();
       } else {
-        View.current = new View(context, store);
+        DashBoardPanel.current = new DashBoardPanel(context, store);
       }
-      await View.current.render();
+      await DashBoardPanel.current.render();
     } catch (error) {
       vscode.window.showErrorMessage(`Unable to open the panel: ${error}`);
     }
