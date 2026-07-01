@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { getNonce } from '../utils';
+import { getNonce } from '../../utils';
 
 export class LauncherView implements vscode.WebviewViewProvider {
   public static readonly viewType = 'projectBoard.view';
@@ -27,11 +27,18 @@ export class LauncherView implements vscode.WebviewViewProvider {
     </style>
     </head>
     <body>
-    <button id="open">Open Dashboard</button>
+      
+      <button id="open">Open Dashboard</button>
+      <button id="open-github">Repositórios GitHub</button>
+
     <script nonce="${nonce}">
         const vscode = acquireVsCodeApi();
         document.getElementById('open').addEventListener('click', () => {
             vscode.postMessage({ type: 'open' });
+        });
+
+        document.getElementById('open-github').addEventListener('click', () => {
+          vscode.postMessage({ type: 'openGithub' });
         });
     </script>
     </body>
@@ -41,6 +48,10 @@ export class LauncherView implements vscode.WebviewViewProvider {
       if (msg.type === 'open') {
         vscode.commands.executeCommand('projectBoard.open');
       }
+      if (msg.type === 'openGithub') {
+        vscode.commands.executeCommand('projectBoard.openGithub');
+      }
+
     });
   }
 }

@@ -43,6 +43,12 @@
           "name": "Projetos",
           "type": "webview",
           "icon": "media/icon.svg"
+        },
+        {
+          "id": "projectBoard.repos",
+          "name": "Repositórios GitHub",
+          "type": "webview",
+          "icon": "media/icon.svg"
         }
       ]
     }

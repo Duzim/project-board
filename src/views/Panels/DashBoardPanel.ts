@@ -1,10 +1,10 @@
 import * as vscode from 'vscode';
-import { renderDashboard } from './components';
-import { createGroup } from '../models/Group';
-import { createProject, Project, withColor } from '../models/Project';
-import GroupsStore from '../services/GroupsStore';
-import { InboundMessage } from '../shared/messages';
-import { getNonce, getRandomHexColor, isRgbOrHex } from '../utils';
+import { renderDashboard } from '../components';
+import { createGroup } from '../../models/Group';
+import { createProject, Project, withColor } from '../../models/Project';
+import GroupsStore from '../../services/GroupsStore';
+import { InboundMessage } from '../../shared/messages';
+import { getNonce, getRandomHexColor, isRgbOrHex } from '../../utils';
 import path from 'path';
 
 export class DashBoardPanel {

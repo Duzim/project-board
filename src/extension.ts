@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
-import { DashBoardPanel } from './views/DashBoardPanel';
+import { DashBoardPanel } from './views/Panels/DashBoardPanel';
 import GroupsStore from './services/GroupsStore';
-import { LauncherView } from './views/LoucherView';
+import { LauncherView } from './views/SideBarView/LoucherView';
 import { GithubService } from './services/GitHubService';
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -11,7 +11,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(
 
-		vscode.commands.registerCommand('projectBoard.open', async () => {
+		vscode.commands.registerCommand('projectBoard.open', () => {
 			DashBoardPanel.createOrShow(context, store);
 		}),
 	);
