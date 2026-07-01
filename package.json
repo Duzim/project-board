@@ -4,6 +4,7 @@
   "description": "A project designed to organize your projects with an intuitive dashboard.",
   "version": "1.0.0",
   "publisher": "Duzim",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/Duzim/my-project-dashboard.git"
