@@ -2,7 +2,7 @@
   "name": "my-project-dashboard",
   "displayName": "My Project Dashboard",
   "description": "A project designed to organize your projects with an intuitive dashboard.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "Duzim",
   "repository": {
     "type": "git",

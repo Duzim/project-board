@@ -213,11 +213,11 @@ export class View {
 
   private async promptColor(current?: string): Promise<string | undefined> {
     const PRESETS = [
-      { label: '🔵 Azul',    color: '#89b4fa' },
-      { label: '🟢 Verde',   color: '#a6e3a1' },
-      { label: '🟡 Amarelo', color: '#f9e2af' },
-      { label: '🔴 Vermelho', color: '#f38ba8' },
-      { label: '🟣 Roxo',    color: '#cba6f7' },
+      { label: '🔵 Blue',    color: '#89b4fa' },
+      { label: '🟢 Green',   color: '#a6e3a1' },
+      { label: '🟡 Yellow', color: '#f9e2af' },
+      { label: '🔴 Red', color: '#f38ba8' },
+      { label: '🟣 Purple',    color: '#cba6f7' },
       { label: '🟠 Laranja', color: '#fab387' },
     ];
 

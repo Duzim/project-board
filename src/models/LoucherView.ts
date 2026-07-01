@@ -27,7 +27,7 @@ export class LauncherView implements vscode.WebviewViewProvider {
     </style>
     </head>
     <body>
-    <button id="open">Abrir Dashboard</button>
+    <button id="open">Open Dashboard</button>
     <script nonce="${nonce}">
         const vscode = acquireVsCodeApi();
         document.getElementById('open').addEventListener('click', () => {

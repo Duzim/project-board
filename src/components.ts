@@ -27,7 +27,7 @@ export function renderGroup(group: Group): string {
         <div class="group-actions">
           <button data-action="edit-group" data-group-id="${gid}">Rename</button>
           ${group.projects.length <= 0 
-            ? `<button data-action="remove-group" data-group-id="${gid}" class="danger">Excluir</button>`
+            ? `<button data-action="remove-group" data-group-id="${gid}" class="danger">Remove</button>`
             : ""
           }
         </div>

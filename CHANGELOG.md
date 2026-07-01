@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Drag-and-drop to reorder projects and groups / Arrastar para reordenar.
 - Open-on-startup setting / Configuração para abrir na inicialização.
 
-## [0.0.1] - 2026-06-29
+## [1.0.0] - 2026-06-30
 
 ### Added / Adicionado
 - Initial release / Versão inicial.
