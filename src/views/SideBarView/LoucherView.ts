@@ -19,18 +19,21 @@ export class LauncherView implements vscode.WebviewViewProvider {
         content="default-src 'none'; style-src 'unsafe-inline'; script-src 'nonce-${nonce}';">
     <style>
         body { padding: 12px; font-family: var(--vscode-font-family); }
+        .button-container { display: flex; flex-direction: column; gap: 8px }
         button {
             width: 100%; padding: 8px; cursor: pointer; border: none; border-radius: 4px;
             color: var(--vscode-button-foreground); background: var(--vscode-button-background);
         }
         button:hover { background: var(--vscode-button-hoverBackground); }
-    </style>
+
+        </style>
     </head>
     <body>
-      
-      <button id="open">Open Dashboard</button>
-      <button id="open-github">Repositórios GitHub</button>
-
+      <div class="button-container" >
+        <button id="open">Open Dashboard</button>
+        
+        <button id="open-github">GitHub Repositories</button>
+      </div>
     <script nonce="${nonce}">
         const vscode = acquireVsCodeApi();
         document.getElementById('open').addEventListener('click', () => {
@@ -49,7 +52,7 @@ export class LauncherView implements vscode.WebviewViewProvider {
         vscode.commands.executeCommand('projectBoard.open');
       }
       if (msg.type === 'openGithub') {
-        vscode.commands.executeCommand('projectBoard.openGithub');
+        vscode.commands.executeCommand('projectBoardGitHub.openGithub');
       }
 
     });

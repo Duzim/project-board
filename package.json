@@ -25,6 +25,10 @@
       {
         "command": "projectBoard.focus",
         "title": "Open Project Dashboard"
+      },
+      {
+        "command": "projectBoardGitHub.openGithub",
+        "title": "Open GitHub Repositories"
       }
     ],
     "viewsContainers": {

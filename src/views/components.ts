@@ -1,3 +1,4 @@
+import { GithubRepo } from "../models/GitHubRepo";
 import { Group } from "../models/Group";
 import { Project } from "../models/Project";
 import { escapeHtml } from "../utils";
@@ -42,4 +43,22 @@ export function renderDashboard(groups: Group[]) {
     }
 
     return groups.map(renderGroup).join('');
+}
+
+// GitHub
+
+export function renderRepoList(repos: GithubRepo[]): string {
+  if (repos.length <= 0) {
+    return '<p class="empty">No repository found.</p>';
+  }
+  return repos.map((repo) => `
+    <div class="repo">
+      <div class="repo-info">
+        <span class="repo-name">${escapeHtml(repo.name)}</span>
+        ${repo.private ? '<span class="badge">privado</span>' : ''}
+        <span class="repo-desc">${escapeHtml(repo.description ?? '')}</span>
+      </div>
+      <button data-action="clone" data-url="${escapeHtml(repo.clone_url)}">Clonar</button>
+    </div>
+  `).join('');
 }

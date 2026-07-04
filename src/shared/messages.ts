@@ -11,3 +11,8 @@ export type InboundMessage =
 
 export type OutboundMessage =
   | { type: 'projects'; html: string };
+
+export type InboundGitHubMessages = 
+  | { type: 'clone';  url: string}
+  | { type: 'refresh' }
+  | { type: 'ready' }

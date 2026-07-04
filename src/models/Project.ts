@@ -6,6 +6,7 @@ export interface Project {
   path: string;
   color?: string;            
   imageBackground?: string; 
+  isGitHub?: boolean
 }
 
 export function createProject(input: {
