@@ -68,13 +68,17 @@ export class DashBoardPanel {
     const scriptUri = this.panel.webview.asWebviewUri(
       vscode.Uri.joinPath(this.context.extensionUri, 'src', 'views', 'main.js'),
     );
+    const codiconUri = this.panel.webview.asWebviewUri(
+      vscode.Uri.joinPath(this.context.extensionUri, 'src', 'styles', 'codicon.css')
+    );
     const nonce = getNonce();
 
     this.panel.webview.html = baseHtml
       .replace('{{cssUri}}', cssUri.toString())
+      .replace('{{codiconUri}}', codiconUri.toString())
       .replace('{{scriptUri}}', scriptUri.toString())
       .replace(/{{nonce}}/g, nonce)
-      .replace('{{cspSource}}', this.panel.webview.cspSource)
+      .replace(/{{cspSource}}/g, this.panel.webview.cspSource)
       .replace('{{dashboard}}', renderDashboard(groups));
   }
 

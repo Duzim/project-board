@@ -29,6 +29,10 @@
       {
         "command": "projectBoardGitHub.openGithub",
         "title": "Open GitHub Repositories"
+      },
+      {
+        "command": "projectBoard.testClone",
+        "title": "Testa Clone Git"
       }
     ],
     "viewsContainers": {
@@ -86,6 +90,7 @@
     "serialize-javascript": "^7.0.6"
   },
   "dependencies": {
+    "@vscode/codicons": "^0.0.45",
     "simple-git": "^3.36.0"
   }
 }

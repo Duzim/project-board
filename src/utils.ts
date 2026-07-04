@@ -24,3 +24,7 @@ export function getRandomHexColor(): string {
   const randomInt = Math.floor(Math.random() * 0xffffff);
   return `#${randomInt.toString(16).padStart(6, '0')}`;
 }
+
+export function formatDate(iso: string) {
+  return new Date(iso).toLocaleDateString()
+}

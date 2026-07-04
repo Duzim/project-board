@@ -4,11 +4,13 @@ import GroupsStore from './services/GroupsStore';
 import { LauncherView } from './views/SideBarView/LoucherView';
 import { GithubService } from './services/GitHubService';
 import { GitHubPanel } from './views/Panels/GithubPanel';
+import { GitService } from './services/GitService';
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 	const store = new GroupsStore(context);
 	const github = new GithubService(context);
+	const gitService = new GitService();
 
 	context.subscriptions.push(
 		vscode.commands.registerCommand('projectBoard.open', () => {
@@ -18,7 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(
 		vscode.commands.registerCommand('projectBoardGitHub.openGithub', () => {
-			GitHubPanel.createOrShow(context, github);
+			GitHubPanel.createOrShow(context, github, gitService, store);
 		}),
 	);
 
