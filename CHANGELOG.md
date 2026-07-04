@@ -28,3 +28,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 [Unreleased]: https://github.com/Duzim/my-project-dashboard/compare/v0.0.1...HEAD
 [0.0.1]: https://github.com/Duzim/my-project-dashboard/releases/tag/v0.0.1
+
+## [1.1.0] - 2026-07-04
+
+### Added
+- GitHub integration: browse your repositories and clone them into a chosen folder, automatically added to your dashboard.
+- Codicon icons across the interface.
+
+### Changed
+- Refined card layout and actions.

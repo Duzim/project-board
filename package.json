@@ -2,7 +2,7 @@
   "name": "project-board",
   "displayName": "Project Board",
   "description": "A project designed to organize your projects with an intuitive dashboard.",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "publisher": "Duzim",
   "license": "MIT",
   "icon": "media/image.png",
